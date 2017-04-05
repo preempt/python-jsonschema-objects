@@ -538,7 +538,11 @@ class ClassBuilder(object):
         for prop, detail in properties.items():
             logger.debug(util.lazy_format("Handling property {0}.{1}",nm, prop))
             properties[prop]['raw_name'] = prop
-            name_translation[prop] = prop.replace('@', '')
+            # BD SYS-4366: This line prevents us from using the "@type" field, which is generated as part of Jackson
+            # Therefore, it is neccessary for us. I don't understand why this replace was done here in the beginning -
+            # I assume '@' is somehow a reserved character in JSON schema. Anyway, for out needs, it seems the we
+            # can skip this check.
+            name_translation[prop] = prop #.replace('@', '')
             prop = name_translation[prop]
 
             if detail.get('type', None) == 'object':
