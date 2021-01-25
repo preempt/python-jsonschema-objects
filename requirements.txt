@@ -1,5 +1,5 @@
 Markdown==3.3
-inflection==0.2.0
+inflection==0.5.1
 jsonschema==2.3.0
 pandocfilters==1.2
 six>=1.5.2
