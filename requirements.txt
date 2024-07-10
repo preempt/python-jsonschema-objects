@@ -3,3 +3,4 @@ inflection==0.5.1
 jsonschema==2.3.0
 pandocfilters==1.2
 six>=1.5.2
+zipp>=3.19.1 # not directly required, pinned by Snyk to avoid a vulnerability
